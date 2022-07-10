@@ -1,0 +1,36 @@
+
+public class ExtendedRectangle extends Rectangle
+{
+	private char symbol;
+	
+	// the constructor
+	public ExtendedRectangle(double lengthIn, double heightIn, char symbolIn)
+	{
+		super(lengthIn, heightIn);
+		symbol = symbolIn;
+	}
+	
+	public void setSymbol(char symbolIn)
+	{
+		symbol = symbolIn;
+	}
+	
+	public String draw()
+	{
+		String s = new String(); // to hold the string representation
+		int l, h;
+		/* in the next two lines we type cast from double to integer so that we are able to count how
+		many times we print the symbol */
+		l = (int) getLength();
+		h = (int) getHeight();
+		for (int i = 1; i <= h; i++)
+		{
+			for (int j = 1; j <= l; j++)
+			{
+				s = s + symbol; // add the symbol to the string
+			}
+			s = s + '\n'; // add the <NEWLINE> character
+		}
+		return s; // return the string representation
+	}
+}
